@@ -20,7 +20,9 @@ def validate_input(input: str) -> int:
 			raise ValueError
 		return input
 	except ValueError as e:
-		logging.info('Value error occured, is input value is legit int?')
+		logging.info(
+			'Value error occured, is input value is legit int?'
+		)
 
 
 def main():
@@ -31,9 +33,6 @@ def main():
 		)
 	swapped_number = swap_bytes(input_number)
 	print(f'result of bytes swapping:\n\t{swapped_number}')
-	
-
-
 
 if __name__ == '__main__':
 	main()
