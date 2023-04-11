@@ -1,6 +1,8 @@
 import logging
 from sys import byteorder
-# logging.getLogger().setLevel(logging.INFO)
+
+
+logging.getLogger().setLevel(logging.INFO)
 
 
 def swap_bytes(number: int) -> int:
@@ -28,11 +30,16 @@ def validate_input(input: str) -> int:
 def main():
 	input_number = None
 	while not input_number:
-		input_number = validate_input(
-			input('Input 2 byte int: ')
-		)
-	swapped_number = swap_bytes(input_number)
-	print(f'result of bytes swapping:\n\t{swapped_number}')
+		try:
+			input_number = validate_input(
+				input('Input 2 byte int: ')
+			)
+			swapped_number = swap_bytes(input_number)
+			print(f'result of bytes swapping:\n\t{swapped_number}')
+		except KeyboardInterrupt:
+			print('\nbye')
+			break
+
 
 if __name__ == '__main__':
 	main()
